@@ -13,9 +13,9 @@ package Model;
 public class Penjualan {
     private String nomorFaktur;
     private double totalPenjualan;
-    private enumJenis status;
+    private Enum_JenisPembayaran status;
 
-    public Penjualan(String nomorFaktur, double totalPenjualan, enumJenis status) {
+    public Penjualan(String nomorFaktur, double totalPenjualan, Enum_JenisPembayaran status) {
         this.nomorFaktur = nomorFaktur;
         this.totalPenjualan = totalPenjualan;
         this.status = status;
@@ -37,11 +37,11 @@ public class Penjualan {
         this.totalPenjualan = totalPenjualan;
     }
 
-    public enumJenis getStatus() {
+    public Enum_JenisPembayaran getStatus() {
         return status;
     }
 
-    public void setStatus(enumJenis status) {
+    public void setStatus(Enum_JenisPembayaran status) {
         this.status = status;
     }
 
