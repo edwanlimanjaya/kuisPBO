@@ -13,17 +13,16 @@ import javax.swing.JOptionPane;
  */
 public class menuAdminJOption {
 
-    public int menu;
-    
-    private menuAdminGui gui = new menuAdminGui();
+    private int menu;
+    private int menuUpdateListBarang;
     
     public menuAdminJOption() {
 
         do {
             menu = Integer.parseInt(JOptionPane.showInputDialog("Selamat datang" + " " + "Nama Admin"
                     + "\n1. Register Kasir"
-                    + "\n2. Update List Barang"
-                    + "\n3. Update List Barang Diskon"
+                    + "\n2. Data Barang"
+                    + "\n3. Data Barang Diskon"
                     + "\n4. Menampilkan List Pekerja"
                     + "\n5. Update Data Pekerja"
                     + "\n6. Update Data Top Up"
@@ -36,7 +35,7 @@ public class menuAdminJOption {
                     + "\n13. Exit"));
             switch (menu) {
                 case 1:
-                    gui.guiRegister();
+                    new menuRegistrasiKasir();
                     break;
 
                 case 2:
