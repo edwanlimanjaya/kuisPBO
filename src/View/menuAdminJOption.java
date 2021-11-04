@@ -83,11 +83,11 @@ public class menuAdminJOption {
                     break;
                 
                 case 13:
-                    JOptionPane.showMessageDialog(null, "Terima kasih!\n Semoga Hari Anda Menyenangkan!");
+                    new PesanJOption.pesanTerimaKasih().pesanTerimaKasihMenu();
                     break;
                     
                 default:
-                    JOptionPane.showMessageDialog(null, "Maaf menu tidak ada!", "Pesan Error" ,JOptionPane.ERROR_MESSAGE);
+                    new PesanJOption.pesanGagal().pesanMenuTidakDitemukan();
             }
 
         } while (menu>13);
