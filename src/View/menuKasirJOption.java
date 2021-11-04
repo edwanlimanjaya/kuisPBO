@@ -11,20 +11,17 @@ import javax.swing.JOptionPane;
  *
  * @author HP
  */
-public class menuAdminJOption {
-
+public class menuKasirJOption {
     private int menu;
-    private int menuUpdateListBarang;
     
-    public menuAdminJOption() {
-
+    public menuKasirJOption(){
         do {
             menu = Integer.parseInt(JOptionPane.showInputDialog("Selamat datang" + " " + "Nama Admin"
-                    + "\n1. Register Kasir"
-                    + "\n2. Data Barang"
+                    + "\n1. Input Transaksi"
+                    + "\n2. Penjualan"
                     + "\n3. Data Barang Diskon"
-                    + "\n4. Penjualan"
-                    + "\n5. Data Pekerja"
+                    + "\n4. Menampilkan List Pekerja"
+                    + "\n5. Update Data Pekerja"
                     + "\n6. Update Data Top Up"
                     + "\n7. Menghitung Total Gaji"
                     + "\n8. Menampilkan Barang Diskon"
@@ -83,15 +80,13 @@ public class menuAdminJOption {
                     break;
                 
                 case 13:
-                    JOptionPane.showMessageDialog(null, "Terima kasih!\n Semoga Hari Anda Menyenangkan!");
+                    new PesanJOption.pesanTerimaKasih().pesanTerimaKasihMenu();
                     break;
                     
                 default:
-                    JOptionPane.showMessageDialog(null, "Maaf menu tidak ada!", "Pesan Error" ,JOptionPane.ERROR_MESSAGE);
+                    new PesanJOption.pesanGagal().pesanMenuTidakDitemukan();
             }
 
         } while (menu>13);
-
     }
-    
 }
