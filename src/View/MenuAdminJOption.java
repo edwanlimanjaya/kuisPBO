@@ -37,6 +37,7 @@ public class MenuAdminJOption {
                     new FormulirRegistrasiKasir();
                     break;
                 case 2:
+                    new MenuDataBarangJOption();
                     break;
                 case 3:
                     break;
