@@ -30,14 +30,17 @@ public class FormulirDataBarang {
     
     public FormulirDataBarang(){
         String title = "Data Barang";
+        frame = new JFrame();
         frame.setTitle(title);
-        frame.setSize(500,200);
-        frame.setLayout(null);
+        frame.setSize(500,400);
+        frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
         Labels();
+        InsertToFrame();
     }
     
-    public void Labels(){
+    private void Labels(){
         labelKodeBarang = new JLabel("Kode Barang");
         labelKodeBarang.setBounds(10, 5, 100, 20);
         labelNamaBarang = new JLabel("Nama Barang");
@@ -49,16 +52,16 @@ public class FormulirDataBarang {
         labelHargaBarang = new JLabel("Harga barang");
         labelHargaBarang.setBounds(10, 125, 100, 20);
         labelKadaluarsa = new JLabel("Tanggal kadaluarsa");
-        labelKadaluarsa.setBounds(10, 155, 100, 20);
+        labelKadaluarsa.setBounds(10, 155, 150, 20);
         labelPersenDiskon = new JLabel("Persen diskon");
-        labelPersenDiskon.setBounds(10, 185, 100, 20);
+        labelPersenDiskon.setBounds(10, 185, 150, 20);
     }
     
-    public void Content(){
+    private void Content(){
         
     }
     
-    public void InsertToFrame(){
+    private void InsertToFrame(){
         frame.add(labelKodeBarang);
         frame.add(labelNamaBarang);
         frame.add(labelKategori);
