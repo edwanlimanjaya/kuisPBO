@@ -57,6 +57,9 @@ public class MenuDataBarangJOption implements ActionListener{
         frame.setVisible(true);
         Content();
         InsertToFrame();
+        tambahBarang.addActionListener(this);
+        updateBarang.addActionListener(this);
+        cancel.addActionListener(this);
     }
     
     private void Content(){
@@ -80,7 +83,7 @@ public class MenuDataBarangJOption implements ActionListener{
         
         switch (command) {
             case "Tambah barang":
-                
+                new FormulirDataBarang();
                 break;
             case "Update barang":
                 
