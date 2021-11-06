@@ -11,7 +11,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-public class menuRegistrasiKasir implements ActionListener {
+public class FormulirRegistrasiKasir implements ActionListener {
 
     private JFrame frameRegistrasi;
     private JLabel labelNama;
@@ -31,7 +31,7 @@ public class menuRegistrasiKasir implements ActionListener {
     private JDatePickerImpl datePickerTanggalLahir;
     private JButton buttonSubmit;
 
-    public menuRegistrasiKasir(){
+    public FormulirRegistrasiKasir(){
         tampilanMenuRegister();
     }
     private void tampilanMenuRegister() {
