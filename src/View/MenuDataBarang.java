@@ -13,14 +13,14 @@ import javax.swing.JButton;
  *
  * @author HP
  */
-public class MenuDataBarangJOption implements ActionListener{
+public class MenuDataBarang implements ActionListener{
     private int menu;
     private JButton updateBarang;
     private JButton tambahBarang;
     private JButton cancel;
     private JFrame frame;
     
-    public MenuDataBarangJOption(){
+    public MenuDataBarang(){
         TampilanMenuDataBarang();
     }
     
@@ -38,7 +38,7 @@ public class MenuDataBarangJOption implements ActionListener{
                     
                     break;
                 case 3:
-                    new MenuAdminJOption();
+                    new MenuAdmin();
                     break;
                 default:
                     new PesanJOption.pesanGagal().pesanMenuTidakDitemukan();

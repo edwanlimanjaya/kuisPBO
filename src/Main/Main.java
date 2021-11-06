@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Main;
-import View.MenuDataBarangJOption;
+import View.MenuDataBarang;
 /**
  *
  * @author HP
@@ -12,6 +12,6 @@ import View.MenuDataBarangJOption;
 public class Main {
     
     public static void main(String[] args) {
-        new MenuDataBarangJOption();
+        new MenuDataBarang();
     }
 }
