@@ -11,8 +11,9 @@ import javax.swing.JOptionPane;
  */
 public class MenuAdmin {
     private int menu;
+    
     public MenuAdmin(){
-        
+        TampilanMenuAdmin();
     }
     
     private void TampilanMenuAdmin(){
@@ -29,7 +30,7 @@ public class MenuAdmin {
                     new MenuDataBarang();
                     break;
                 default:
-                    throw new AssertionError();
+                    new PesanJOption.pesanTerimaKasih().pesanTerimaKasihMenu();
             }
         } while (menu>3);
         
