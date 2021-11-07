@@ -19,7 +19,7 @@ public class MenuAdmin {
     private void TampilanMenuAdmin(){
         do {
             menu = Integer.parseInt(JOptionPane.showInputDialog("Selamat datang "
-                    + "\n1. Registrasi Admin"
+                    + "\n1. Registrasi Kasir"
                     + "\n2. Data barang"
                     + "\n3. Exit"));
             switch (menu) {
