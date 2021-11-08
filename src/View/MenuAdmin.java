@@ -21,13 +21,17 @@ public class MenuAdmin {
             menu = Integer.parseInt(JOptionPane.showInputDialog("Selamat datang "
                     + "\n1. Registrasi Kasir"
                     + "\n2. Data barang"
-                    + "\n3. Exit"));
+                    + "\n3. Data barang diskon"
+                    + "\n4. Exit"));
             switch (menu) {
                 case 1:
                     new FormulirRegistrasiKasir();
                     break;
                 case 2:
                     new MenuDataBarang();
+                    break;
+                case 3:
+                    
                     break;
                 default:
                     new PesanJOption.PesanTerimakasihJOption().PesanTerimaKasihMenu();
