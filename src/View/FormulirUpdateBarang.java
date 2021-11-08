@@ -124,7 +124,7 @@ public class FormulirUpdateBarang implements ActionListener{
                 
                 break;
             case "Membatalkan":
-                
+                new MenuDataBarang();
                 break;
             
         }
