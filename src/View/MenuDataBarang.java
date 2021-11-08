@@ -45,7 +45,7 @@ public class MenuDataBarang implements ActionListener{
                     new MenuAdmin();
                     break;
                 default:
-                    new PesanJOption.PesanGagal().PesanMenuTidakDitemukan();
+                    new PesanJOption.PesanGagalJOption().PesanMenuTidakDitemukan();
             }
         } while (menu>3);
         

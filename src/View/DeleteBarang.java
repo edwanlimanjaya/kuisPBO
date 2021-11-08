@@ -21,9 +21,9 @@ public class DeleteBarang {
         String cari = CariNamaBarang();
         
         if (cari!=null) {
-            new PesanJOption.PesanBerhasil().PesanBerhasilDeleteDatabase();
+            new PesanJOption.PesanBerhasilJOption().PesanBerhasilDeleteDatabase();
         }else{
-            new PesanJOption.PesanGagal().PesanGagalHapusDatabase();
+            new PesanJOption.PesanGagalJOption().PesanGagalHapusDatabase();
         }
     }
     

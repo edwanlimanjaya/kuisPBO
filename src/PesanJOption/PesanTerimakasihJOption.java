@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author HP
  */
-public class PesanTerimakasih {
+public class PesanTerimakasihJOption {
      public void PesanTerimaKasihMenu(){
         JOptionPane.showMessageDialog(null, "Terima kasih!\n Semoga Hari Anda Menyenangkan!");
     }

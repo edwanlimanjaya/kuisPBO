@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author HP
  */
-public class PesanBerhasil {
+public class PesanBerhasilJOption {
     public void PesanBerhasilDatabase(){
         JOptionPane.showMessageDialog(null, "Data Anda berhasil ditambahkan dalam database!", "Pesan Berhasil", JOptionPane.INFORMATION_MESSAGE);
     }

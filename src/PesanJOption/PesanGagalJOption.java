@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author HP
  */
-public class PesanGagal {
+public class PesanGagalJOption {
     public void PesanGagalDatabase(){
         JOptionPane.showMessageDialog(null, "Maaf, data Anda tidak berhasil masuk ke database!", "Pesan Gagal", JOptionPane.ERROR_MESSAGE);
     }

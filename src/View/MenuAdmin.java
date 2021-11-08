@@ -30,7 +30,7 @@ public class MenuAdmin {
                     new MenuDataBarang();
                     break;
                 default:
-                    new PesanJOption.PesanTerimaKasih().PesanTerimaKasihMenu();
+                    new PesanJOption.PesanTerimakasihJOption().PesanTerimaKasihMenu();
             }
         } while (menu>3);
         
