@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Properties;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,7 +21,7 @@ import org.jdatepicker.impl.UtilDateModel;
  *
  * @author HP
  */
-public class FormulirUpdateBarang {
+public class FormulirUpdateBarang implements ActionListener{
     private JFrame frame;
     private JLabel labelKodeBarang;
     private JLabel labelNamaBarang;
@@ -111,5 +113,20 @@ public class FormulirUpdateBarang {
         frame.add(fieldPersenDiskon);
         frame.add(buttonMasukan);
         frame.add(buttonMembatalkan);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+        
+        switch (command) {
+            case "Masukan":
+                
+                break;
+            case "Membatalkan":
+                
+                break;
+            
+        }
     }
 }

@@ -86,7 +86,7 @@ public class MenuDataBarang implements ActionListener{
                 new FormulirDataBarang();
                 break;
             case "Update barang":
-                
+                new FormulirUpdateBarang();
                 break;
             case "Cancel":
                 TampilanMenuDataBarang();
