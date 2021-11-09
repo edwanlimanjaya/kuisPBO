@@ -6,6 +6,7 @@ import java.util.Properties;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
@@ -27,7 +28,7 @@ public class FormulirRegistrasiKasir implements ActionListener {
     private JTextField textFieldAlamat;
     private JTextField textFieldIdPerson;
     private JTextField textFieldJabatan;
-    private JTextField textFieldPassword;
+    private JPasswordField passwordFieldPassword;
     private JDatePickerImpl datePickerTanggalLahir;
     private JButton buttonSubmit;
 
@@ -81,8 +82,8 @@ public class FormulirRegistrasiKasir implements ActionListener {
         textFieldIdPerson.setBounds(110, 125, 100, 20);
         textFieldJabatan = new JTextField("Kasir");
         textFieldJabatan.setBounds(110, 155, 100, 20);
-        textFieldPassword = new JTextField();
-        textFieldPassword.setBounds(110, 185, 100, 20);
+        passwordFieldPassword = new JPasswordField();
+        passwordFieldPassword.setBounds(110, 185, 100, 20);
         UtilDateModel model = new UtilDateModel();
         Properties p = new Properties();
         p.put("text.today", "Today");
@@ -108,7 +109,7 @@ public class FormulirRegistrasiKasir implements ActionListener {
         frameRegistrasi.add(textFieldAlamat);
         frameRegistrasi.add(textFieldIdPerson);
         frameRegistrasi.add(textFieldJabatan);
-        frameRegistrasi.add(textFieldPassword);
+        frameRegistrasi.add(passwordFieldPassword);
         frameRegistrasi.add(buttonSubmit);
     }
 

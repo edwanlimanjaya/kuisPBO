@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Main;
-import View.FormulirTopUp;
+import View.FormulirPenjualanBarang;
 /**
  *
  * @author HP
@@ -12,6 +12,6 @@ import View.FormulirTopUp;
 public class Main {
     
     public static void main(String[] args) {
-        new FormulirTopUp();
+        new FormulirPenjualanBarang();
     }
 }
