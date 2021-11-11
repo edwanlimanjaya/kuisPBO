@@ -25,7 +25,7 @@ public class MenuAdmin {
                     + "\n4. Exit"));
             switch (menu) {
                 case 1:
-                    new FormulirRegistrasiKasir();
+
                     break;
                 case 2:
                     new MenuDataBarang();

@@ -18,4 +18,8 @@ public class PesanBerhasilJOption {
     public void PesanBerhasilDeleteDatabase(){
         JOptionPane.showMessageDialog(null, "Data Anda berhasil dihapus dalam database!", "Pesan Berhasil", JOptionPane.INFORMATION_MESSAGE);
     }
+    
+    public void PesanBerhasilPembayaran(){
+        JOptionPane.showMessageDialog(null, "Pembayaran Anda Berhasil!", "Selamat!", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

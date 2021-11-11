@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package View;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -13,7 +15,7 @@ import javax.swing.JButton;
  *
  * @author HP
  */
-public class MenuTransaksi {
+public class MenuTransaksi implements ActionListener{
     private JFrame frame;
     private JLabel labelKodeBarang;
     private JLabel labelJumlahBarang;
@@ -39,6 +41,9 @@ public class MenuTransaksi {
         Labels();
         Content();
         InsertToFrame();
+        
+        tambahBarang.addActionListener(this);
+        tidak.addActionListener(this);
     }
     
     private void Labels(){
@@ -62,5 +67,21 @@ public class MenuTransaksi {
         frame.add(jumlahBarang);
         frame.add(tambahBarang);
         frame.add(tidak);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+        
+        switch (command) {
+            case "Tambah Barang":
+                new MenuTransaksi();
+                break;
+            case "Tidak":
+                new MenuBayar();
+                break;
+            default:
+                throw new AssertionError();
+        }
     }
 }
