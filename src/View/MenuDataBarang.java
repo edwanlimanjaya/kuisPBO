@@ -29,7 +29,6 @@ public class MenuDataBarang implements ActionListener{
             menu = Integer.parseInt(JOptionPane.showInputDialog(null, "Menu data barang"
                     + "\n1. Update barang"
                     + "\n2. Delete barang"
-                    + "\n3. Menampilkan List Barang"
                     + "\n3. Exit"));
             switch (menu) {
                 case 1:
@@ -39,9 +38,6 @@ public class MenuDataBarang implements ActionListener{
                     new DeleteBarang();
                     break;
                 case 3:
-                    
-                    break;
-                case 4:
                     new MenuAdmin();
                     break;
                 default:

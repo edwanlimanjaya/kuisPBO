@@ -31,7 +31,7 @@ public class MenuAdmin {
                     new MenuDataBarang();
                     break;
                 case 3:
-                    
+                    new MenuDataBarangDiskon();
                     break;
                 default:
                     new PesanJOption.PesanTerimakasihJOption().PesanTerimaKasihMenu();
