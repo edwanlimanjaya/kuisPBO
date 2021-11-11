@@ -21,7 +21,14 @@ public class MenuKasir {
     private void TampilanMenuKasir(){
         do {
             menu = Integer.parseInt(JOptionPane.showInputDialog(null,"Selamat datang kasir" + "Nama kasir"
-                    + "\n1. "));
+                    + "\n1. Input Transaksi"));
+            switch (menu) {
+                case 1:
+                    new FormulirPenjualanBarang();
+                    break;
+                default:
+                    throw new AssertionError();
+            }
         } while (true);
         
     }
