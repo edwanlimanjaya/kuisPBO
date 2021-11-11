@@ -27,6 +27,8 @@ public class MenuDataBarang implements ActionListener{
     private void TampilanMenuDataBarang(){
         do {
             menu = Integer.parseInt(JOptionPane.showInputDialog(null, "Menu data barang"
+                    +"List Barang"
+                    + "\n"
                     + "\n1. Update barang"
                     + "\n2. Delete barang"
                     + "\n3. Exit"));

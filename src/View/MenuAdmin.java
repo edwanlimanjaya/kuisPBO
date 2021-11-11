@@ -22,6 +22,9 @@ public class MenuAdmin {
                     + "\n1. Registrasi Kasir"
                     + "\n2. Data barang"
                     + "\n3. Data barang diskon"
+                    + "\n. List Penjualan"
+                    + "\n Data Pekerja"
+                    + "\n Data top up"
                     + "\n4. Exit"));
             switch (menu) {
                 case 1:
