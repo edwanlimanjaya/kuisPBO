@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import Model.User;
 
 /**
  *
@@ -46,10 +47,10 @@ public class MenuLoginPengguna implements ActionListener {
         login.setBounds(100, 180, 80, 20);
         back = new JButton("Back");
         back.setBounds(180, 180, 80, 20);
-        
+
         login.addActionListener(this);
         back.addActionListener(this);
-        
+
         Labels();
         Content();
         InsertToFrame();
@@ -96,10 +97,13 @@ public class MenuLoginPengguna implements ActionListener {
                 password = String.valueOf(fieldPassword.getPassword());
                 if (email.equals(null) && password.equals(null)) {
                     new Message.MessageFailed().MessageIncomplete();
+                } else if (fieldPassword.getPassword().length < 8) {
+                    new Message.MessageFailed().MessageIncompletePassword();
                 } else {
-                    boolean login = new Controller.DatabaseController().loginUser(email, password);
-                    if (login) {
+                    User login = new Controller.DatabaseController().loginUser(email, password);
+                    if (login!=null) {
                         new Message.MessageSuccessful().SuccessfulLoginMessage();
+                        new MenuUbahProfile().MenuUbahProfile(login);
                     } else {
                         new Message.MessageFailed().LoginFailedMessage();
                     }

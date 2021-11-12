@@ -17,5 +17,11 @@ public class MessageSuccessful {
         JOptionPane.showMessageDialog(null, "You have successfully logged in!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
     }
     
+    public void SuccessfulInsertDatabase(){
+        JOptionPane.showMessageDialog(null, "Your data has been successfully added to the database!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
+    }
     
+    public void SuccessfulUpdateDatabase(){
+        JOptionPane.showMessageDialog(null, "Your data has been successfully updated to the database!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

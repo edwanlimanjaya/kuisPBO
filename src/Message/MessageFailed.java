@@ -18,6 +18,18 @@ public class MessageFailed {
     }
     
     public void MessageIncomplete(){
-        JOptionPane.showMessageDialog(null, "Please complete all the fields!", "Message", JOptionPane.ABORT);
+        JOptionPane.showMessageDialog(null, "Please complete all the fields!", "Sorry!", JOptionPane.WARNING_MESSAGE);
+    }
+    
+    public void MessageIncompletePassword(){
+        JOptionPane.showMessageDialog(null, "Your password must have 8 or more characters!", "Sorry", JOptionPane.WARNING_MESSAGE);
+    }
+    
+    public void MessageFailedInsertDatabase(){
+        JOptionPane.showMessageDialog(null, "Your data cannot be entered into the database!", "Sorry!", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void FailedUpdateDatabase(){
+        JOptionPane.showMessageDialog(null, "Your data cannot be updated to the database!", "Sorry!", JOptionPane.ERROR_MESSAGE);
     }
 }
