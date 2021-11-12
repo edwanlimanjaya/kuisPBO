@@ -4,15 +4,14 @@
  * and open the template in the editor.
  */
 package PesanJOption;
-
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author HP
  */
-public class PesanGagal {
-    public void pesanGagalLogin() {
-        JOptionPane.showMessageDialog(null, "You have not successfully logged in!", "Sorry!", JOptionPane.ERROR_MESSAGE);
+public class Pesan {
+    
+    public void PesanBelumLengkap(){
+        JOptionPane.showMessageDialog(null, "Please complete all the fields!", "Message", JOptionPane.ABORT);
     }
 }

@@ -14,6 +14,6 @@ import javax.swing.JOptionPane;
 public class PesanBerhasil {
 
     public void pesanBerhasilLogin() {
-        JOptionPane.showMessageDialog(null, "Anda berhasil login", "Selamat!", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "You have successfully logged in!", "Congratulations!", JOptionPane.INFORMATION_MESSAGE);
     }
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Main;
-import View.MenuLoginPengguna;
+import View.MainMenu;
 /**
  *
  * @author HP
@@ -16,7 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new MenuLoginPengguna();
+        new MainMenu();
     }
     
 }

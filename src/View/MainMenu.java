@@ -22,6 +22,7 @@ public class MainMenu implements ActionListener{
     private JButton loginPengguna;
     private JButton registrasi;
     private JButton lihatDataPengguna;
+    private ImageIcon image;
     
     public MainMenu(){
         String title = "Main Menu";
@@ -37,8 +38,10 @@ public class MainMenu implements ActionListener{
     }
     
     private void Labels(){
-        labelLogo = new JLabel(new ImageIcon("J:\\Semester 3\\Pemograman Berorientsi Objek\\KuisPBO\\media\\images"));
-        labelLogo.setBounds(10, 10, 100, 20);
+        image = new ImageIcon("media/images/logo.png");
+        labelLogo = new JLabel(image);
+        labelLogo.setBounds(10, 10, 50, 30);
+        labelLogo.setOpaque(true);
         labelWords = new JLabel("Welcome!");
         labelWords.setBounds(110,10,100,20);
     }
@@ -50,6 +53,10 @@ public class MainMenu implements ActionListener{
         registrasi.setBounds(10, 90, 100, 20);
         lihatDataPengguna = new JButton("Lihat data berdasarkan kategori");
         lihatDataPengguna.setBounds(10, 130, 230, 20);
+        
+        loginPengguna.addActionListener(this);
+        registrasi.addActionListener(this);
+        lihatDataPengguna.addActionListener(this);
     }
     
     private void InsertIntoFrame(){
