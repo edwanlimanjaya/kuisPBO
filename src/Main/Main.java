@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Main;
+
 import View.MainMenu;
+
 /**
  *
  * @author HP
@@ -18,5 +20,5 @@ public class Main {
         // TODO code application logic here
         new MainMenu();
     }
-    
+
 }

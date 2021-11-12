@@ -15,9 +15,12 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 class DatabaseHandler {
+
+   
     public Connection con;
     private String driver = "com.mysql.cj.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost/kuisPBO?serverTimezone=" + TimeZone.getDefault().getID();
+//    private String url = "jdbc:mysql://localhost/db_test";
+    private String url = "jdbc:mysql://localhost/kuispbo?serverTimezone=" + TimeZone.getDefault().getID();
     private String username = "root";
     private String password = "";
 

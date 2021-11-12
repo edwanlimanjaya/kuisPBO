@@ -13,6 +13,9 @@ public class CategoryUser {
     private int id;
     private String name;
 
+    public CategoryUser() {
+    }
+    
     public CategoryUser(int id, String name) {
         this.id = id;
         this.name = name;
