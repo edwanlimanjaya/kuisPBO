@@ -95,13 +95,13 @@ public class MenuLoginPengguna implements ActionListener {
                 email = fieldEmail.getText();
                 password = String.valueOf(fieldPassword.getPassword());
                 if (email.equals(null) && password.equals(null)) {
-                    new PesanJOption.Pesan().PesanBelumLengkap();
+                    new Message.MessageFailed().MessageIncomplete();
                 } else {
                     boolean login = new Controller.DatabaseController().loginUser(email, password);
                     if (login) {
-                        new PesanJOption.PesanBerhasil().pesanBerhasilLogin();
+                        new Message.MessageSuccessful().SuccessfulLoginMessage();
                     } else {
-                        new PesanJOption.PesanGagal().pesanGagalLogin();
+                        new Message.MessageFailed().LoginFailedMessage();
                     }
                 }
                 break;
