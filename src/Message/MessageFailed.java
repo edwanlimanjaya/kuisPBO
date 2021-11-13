@@ -32,4 +32,8 @@ public class MessageFailed {
     public void FailedUpdateDatabase(){
         JOptionPane.showMessageDialog(null, "Your data cannot be updated to the database!", "Sorry!", JOptionPane.ERROR_MESSAGE);
     }
+    
+     public void FailedShowData(){
+        JOptionPane.showMessageDialog(null, "Your data could not be found!", "Sorry!", JOptionPane.ERROR_MESSAGE);
+    }
 }

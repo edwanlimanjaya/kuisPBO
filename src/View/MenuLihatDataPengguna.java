@@ -21,27 +21,21 @@ import Model.User;
 public class MenuLihatDataPengguna implements ActionListener {
 
     private JLabel labelLogo;
-    private JLabel labelEmail;
-    private JLabel labelFieldEmail;
-    private JLabel labelName;
-    private JLabel labelFieldName;
-    private JLabel labelPassword;
-    private JLabel labelFieldPassword;
-    private JLabel labelCategory;
-    private JLabel labelFieldCategory;
+    private JLabel labelHasil;
     private JFrame frame;
     private JTextField fieldSearch;
     private JLabel labelSearch;
     private ImageIcon image;
     private JButton search;
-    private String name;
-    private User user;
+    private JButton back;
+    private String categoryName;
+    private String hasil;
 
     public MenuLihatDataPengguna() {
         String title = "Lihat Data";
         frame = new JFrame();
         frame.setTitle(title);
-        frame.setSize(400, 400);
+        frame.setSize(900, 400);
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
         frame.setVisible(true);
@@ -49,6 +43,7 @@ public class MenuLihatDataPengguna implements ActionListener {
         Content();
         InsertToFrame();
         search.addActionListener(this);
+        back.addActionListener(this);
     }
 
     private void Labels() {
@@ -58,70 +53,46 @@ public class MenuLihatDataPengguna implements ActionListener {
         labelLogo.setOpaque(true);
         labelSearch = new JLabel("Search");
         labelSearch.setBounds(10, 50, 100, 20);
-        labelName = new JLabel("Name");
-        labelName.setBounds(10, 90, 100, 20);
-        labelName.setVisible(false);
-        labelEmail = new JLabel("Email");
-        labelEmail.setBounds(10, 130, 100, 20);
-        labelEmail.setVisible(false);
-        labelPassword = new JLabel("Password");
-        labelPassword.setBounds(10, 170, 100, 20);
-        labelPassword.setVisible(false);
-        labelCategory = new JLabel("Category");
-        labelCategory.setBounds(10, 210, 100, 20);
-        labelCategory.setVisible(false);
-
-        labelFieldName = new JLabel();
-        labelFieldName.setBounds(110, 90, 100, 20);
-        labelFieldName.setVisible(false);
-        labelFieldEmail = new JLabel();
-        labelFieldEmail.setBounds(110, 130, 100, 20);
-        labelFieldEmail.setVisible(false);
-        labelFieldPassword = new JLabel();
-        labelFieldPassword.setBounds(110, 170, 100, 20);
-        labelFieldPassword.setVisible(false);
-        labelFieldCategory = new JLabel();
-        labelFieldCategory.setBounds(110, 210, 100, 20);
-        labelFieldCategory.setVisible(false);
+        labelHasil = new JLabel();
+        labelHasil.setBounds(10, 90, 800, 20);
     }
 
     private void Content() {
         fieldSearch = new JTextField();
         fieldSearch.setBounds(110, 50, 100, 20);
         search = new JButton("Search Now");
-        search.setBounds(210, 50, 100, 20);
+        search.setBounds(210, 50, 130, 20);
+        back = new JButton("Back");
+        back.setBounds(340, 50, 100, 20);
     }
-    
-    private void InsertToFrame(){
+
+    private void InsertToFrame() {
         frame.add(labelLogo);
         frame.add(labelSearch);
         frame.add(fieldSearch);
         frame.add(search);
-        frame.add(labelName);
-        frame.add(labelEmail);
-        frame.add(labelPassword);
-        frame.add(labelCategory);
-        frame.add(labelFieldName);
-        frame.add(labelFieldEmail);
-        frame.add(labelFieldPassword);
-        frame.add(labelFieldCategory);
+        frame.add(labelHasil);
+
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        name = fieldSearch.getText();
-        user = new Controller.DatabaseController().searchUser(name);
-        labelName.setVisible(true);
-        labelEmail.setVisible(true);
-        labelPassword.setVisible(true);
-        labelCategory.setVisible(true);
+        String command = e.getActionCommand();
+        switch (command) {
+            case "Search":
+                categoryName = fieldSearch.getText();
+                hasil = new Controller.DatabaseController().searchUser(categoryName);
+                if (hasil != null) {
+                    labelHasil.setText(hasil);
+                    labelHasil.setVisible(true);
+                } else {
+                    new Message.MessageFailed().FailedShowData();
+                }
+                break;
+            case "Back":
+                new MainMenu();
+                break;
+        }
 
-        labelFieldName.setText(user.getName());
-        labelFieldName.setVisible(true);
-        labelFieldEmail.setText(user.getEmail());
-        labelFieldEmail.setVisible(true);
-        labelFieldPassword.setText(user.getPassword());
-        labelFieldPassword.setVisible(true);
-        labelFieldCategory.setText(String.valueOf(user.getIdCategory()));
-        labelFieldCategory.setVisible(true);
     }
 }

@@ -49,6 +49,7 @@ public class MenuRegistrasi implements ActionListener {
 
     public MenuRegistrasi() {
         userCheck = new Controller.DatabaseController().getAllUsers();
+        idTambah = userCheck.size();
         String title = "Registrasi";
         frame = new JFrame();
         frame.setTitle(title);
@@ -118,9 +119,7 @@ public class MenuRegistrasi implements ActionListener {
         String command = e.getActionCommand();
         switch (command) {
             case "Registrasi":
-                if (userCheck.size()!=idTambah) {
-                    idTambah+=userCheck.size();
-                }
+                    idTambah++;
                 name = fieldName.getText();
                 email = fieldEmail.getText();
                 password = String.valueOf(fieldPassword.getPassword());

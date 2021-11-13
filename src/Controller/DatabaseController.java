@@ -132,13 +132,13 @@ public class DatabaseController {
         conn.connect();
         ArrayList<String> categories = new ArrayList<>();
         int i = 0;
-        String query = "SELECT Name FROM category";
+        String query = "SELECT `Category name` FROM category";
         try {
             Statement stmt = conn.con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 CategoryUser category = new CategoryUser();
-                category.setName((rs.getString("Name")));
+                category.setName((rs.getString("Category name")));
                 categories.add(category.getName());
                 i++;
             }
@@ -148,21 +148,31 @@ public class DatabaseController {
         return categories;
     }
 
-    public static User searchUser(String name) {
+    public static String searchUser(String kategori) {
         conn.connect();
-
-        String query = "Select*FROM users WHERE `Name`='" + name + "'";
+        String hasil = "";
+        String query = "SELECT*FROM `users` \n" 
+                +"INNER JOIN category ON `IdCategory` = `Category id`"
+                + "WHERE `Category name` = '"+kategori+"'";
         try {
             Statement stmt = conn.con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 User user = new User();
+                CategoryUser category = new CategoryUser();
                 user.setId(rs.getInt("Id"));
                 user.setName(rs.getString("Name"));
                 user.setEmail(rs.getString("Email"));
                 user.setPassword(rs.getString("Password"));
                 user.setIdCategory(rs.getInt("IdCategory"));
-                return user;
+                category.setName(rs.getNString("Category name"));
+                hasil = "Id \n" + user.getId() +"\n"
+                        + "Name \n" + user.getName()+ "\n"
+                        + "Email \n" +  user.getEmail()+ "\n"
+                        + "Password \n" + user.getPassword() +"\n"
+                        + "Id Category \n" + user.getIdCategory()+"\n"
+                        + "Category \n" + category.getName();
+                return hasil;
             }
         } catch (SQLException e) {
             e.printStackTrace();
