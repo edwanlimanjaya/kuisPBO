@@ -13,6 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import Model.User;
+import java.util.ArrayList;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -22,6 +25,8 @@ public class MenuLihatDataPengguna implements ActionListener {
 
     private JLabel labelLogo;
     private JLabel labelHasil;
+    private JTextArea textAreaHasil;
+    private JScrollPane scrollPaneHasil;
     private JFrame frame;
     private JTextField fieldSearch;
     private JLabel labelSearch;
@@ -29,8 +34,9 @@ public class MenuLihatDataPengguna implements ActionListener {
     private JButton search;
     private JButton back;
     private String categoryName;
-    private String hasil;
-
+    private ArrayList<String> hasil = new ArrayList<>();
+//    private String hasil = "";
+    
     public MenuLihatDataPengguna() {
         String title = "Lihat Data";
         frame = new JFrame();
@@ -53,8 +59,12 @@ public class MenuLihatDataPengguna implements ActionListener {
         labelLogo.setOpaque(true);
         labelSearch = new JLabel("Search");
         labelSearch.setBounds(10, 50, 100, 20);
-        labelHasil = new JLabel();
-        labelHasil.setBounds(10, 90, 800, 20);
+        textAreaHasil = new JTextArea();
+        textAreaHasil.setBounds(10, 90, 800, 100);
+        textAreaHasil.setVisible(false);
+        scrollPaneHasil = new JScrollPane(textAreaHasil);
+        scrollPaneHasil.setBounds(10, 90, 800, 100);
+        scrollPaneHasil.setVisible(false);
     }
 
     private void Content() {
@@ -71,7 +81,8 @@ public class MenuLihatDataPengguna implements ActionListener {
         frame.add(labelSearch);
         frame.add(fieldSearch);
         frame.add(search);
-        frame.add(labelHasil);
+        frame.add(back);
+        frame.add(scrollPaneHasil);
 
     }
 
@@ -79,12 +90,16 @@ public class MenuLihatDataPengguna implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
         switch (command) {
-            case "Search":
+            case "Search Now":
                 categoryName = fieldSearch.getText();
                 hasil = new Controller.DatabaseController().searchUser(categoryName);
                 if (hasil != null) {
-                    labelHasil.setText(hasil);
-                    labelHasil.setVisible(true);
+                    for (int i = 0; i < hasil.size(); i++) {
+                        textAreaHasil.setText(hasil.get(i));
+                        textAreaHasil.setVisible(true);
+                        scrollPaneHasil.setVisible(true);
+                    }
+                    
                 } else {
                     new Message.MessageFailed().FailedShowData();
                 }

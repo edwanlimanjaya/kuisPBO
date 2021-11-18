@@ -148,8 +148,11 @@ public class DatabaseController {
         return categories;
     }
 
-    public static String searchUser(String kategori) {
+    public static ArrayList<String> searchUser(String kategori) {
         conn.connect();
+        ArrayList<String>hasilBanyak = new ArrayList<>();
+        ArrayList<User>users = new ArrayList<>();
+        ArrayList<CategoryUser>categories = new ArrayList<>();
         String hasil = "";
         String query = "SELECT*FROM `users` \n" 
                 +"INNER JOIN category ON `IdCategory` = `Category id`"
@@ -165,22 +168,20 @@ public class DatabaseController {
                 user.setEmail(rs.getString("Email"));
                 user.setPassword(rs.getString("Password"));
                 user.setIdCategory(rs.getInt("IdCategory"));
+                category.setId(rs.getInt("Category id"));
                 category.setName(rs.getNString("Category name"));
-                hasil = "Id \n" + user.getId() +"\n"
-                        + "Name \n" + user.getName()+ "\n"
-                        + "Email \n" +  user.getEmail()+ "\n"
-                        + "Password \n" + user.getPassword() +"\n"
-                        + "Id Category \n" + user.getIdCategory()+"\n"
-                        + "Category \n" + category.getName();
-                return hasil;
+                users.add(user);
+                categories.add(category);
+                hasil = users.toString()+ "\n" +categories.toString();
+                hasilBanyak.add(hasil);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return hasilBanyak;
 
     }
-
+    
     // DELETE
     public static boolean deleteUser(String name) {
         conn.connect();

@@ -39,6 +39,6 @@ public class CategoryUser {
 
     @Override
     public String toString() {
-        return "CategoryUser{" + "id=" + id + ", name=" + name + '}';
+        return "CategoryUser{" + "id=" + id + ", name=" + name + "\n" +'}';
     }
 }
