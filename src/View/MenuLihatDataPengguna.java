@@ -36,7 +36,7 @@ public class MenuLihatDataPengguna implements ActionListener {
     private String categoryName;
     private ArrayList<String> hasil = new ArrayList<>();
 //    private String hasil = "";
-    
+
     public MenuLihatDataPengguna() {
         String title = "Lihat Data";
         frame = new JFrame();
@@ -89,19 +89,15 @@ public class MenuLihatDataPengguna implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
+        String hasilAkhir = "";
         switch (command) {
             case "Search Now":
                 categoryName = fieldSearch.getText();
                 hasil = new Controller.DatabaseController().searchUser(categoryName);
-                if (hasil != null) {
-                    for (int i = 0; i < hasil.size(); i++) {
-                        textAreaHasil.setText(hasil.get(i));
-                        textAreaHasil.setVisible(true);
-                        scrollPaneHasil.setVisible(true);
-                    }
-                    
-                } else {
-                    new Message.MessageFailed().FailedShowData();
+                for (int i = 0; i < hasil.size(); i++) {
+                    textAreaHasil.setText(hasil.get(i));
+                    textAreaHasil.setVisible(true);
+                    scrollPaneHasil.setVisible(true);
                 }
                 break;
             case "Back":
